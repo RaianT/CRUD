@@ -31,11 +31,10 @@
                     <td>
                         <div class="botao-edit">
                             <!-- Botão de Editar -->
-                            <form>
+                            <form action="/clientes/deletar/<%= cliente.clicod %>" method="post" style="display:inline;">
                                 <a href="/clientes/editar/<%= cliente.clicod %>">
                                     <button type="button">Editar</button>
                                 </a>
-                            <!-- Formulário para Deletar -->
                                 <input type="hidden" name="_method" value="DELETE"> <!-- Requer suporte a DELETE no back-end -->
                                 <button type="submit" >Deletar</button>
 
