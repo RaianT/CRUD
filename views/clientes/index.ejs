@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Clientes</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <h1>Lista de Clientes</h1>
+    <a href="/clientes/cadastrar">Cadastrar Novo Cliente</a>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Celular</th>
+                <th>Email</th>
+                <th>Data de Nascimento</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% clientes.forEach(cliente => { %>
+                <tr>
+                    <td><%= cliente.clicod %></td>
+                    <td><%= cliente.clinome %></td>
+                    <td><%= cliente.clicelular %></td>
+                    <td><%= cliente.cliemail %></td>
+                    <td><%= new Date(cliente.clidatanasc).toLocaleDateString('pt-BR') %></td>
+                    
+                    <td>
+                        <div class="botao-edit">
+                            <!-- Botão de Editar -->
+                            <form>
+                                <a href="/clientes/editar/<%= cliente.clicod %>">
+                                    <button type="button">Editar</button>
+                                </a>
+                            <!-- Formulário para Deletar -->
+                                <input type="hidden" name="_method" value="DELETE"> <!-- Requer suporte a DELETE no back-end -->
+                                <button type="submit" >Deletar</button>
+
+                                
+                            </form>
+                        </div>
+                    </td>
+                    
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</body>
+</html>

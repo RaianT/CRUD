@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cadastrar Produto</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <div class="div-produto">
+    <h1>Cadastrar Produto</h1>
+  </div>
+  <form action="/produtos/cadastrarProduto" method="post">
+    <label for="nome">Nome</label>
+    <input type="text" id="nome" name="nome" required>
+    
+    <label for="categoria">Categoria</label>
+    <input type="text" id="categoria" name="categoria" required>
+    
+    <label for="preco">Preço</label>
+    <input type="number" id="preco" name="preco" min="0" required>
+
+    <label for="descricao">Descrição</label>
+    <textarea id="descricao" name="descricao" minlength="10" maxlength="2000"></textarea>
+
+    <label for="nomeImagem">Nome da Imagem</label>
+    <input type="text" id="nomeImagem" name="nomeImagem">
+
+    <button type="submit">Cadastrar</button>
+  </form>
+</body>
+</html>

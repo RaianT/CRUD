@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Editar Produto</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <h1>Editar Produto</h1>
+  <form action="/produtos/editarProduto/<%= produto.id %>" method="post">
+    <input type="text" id="nome" name="nome" value="<%= produto.pronome %>" required>
+    <input type="number" id="preco" name="preco" value="<%= produto.propreco %>" min="0" required>
+    <textarea id="descricao" name="descricao" required><%= produto.prodescricao %></textarea>
+  </form>
+</body>
+</html>
